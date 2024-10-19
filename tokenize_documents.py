@@ -1,4 +1,6 @@
 import os
+
+os.environ["HF_HOME"] = ".hf"
 import argparse
 import multiprocessing as mp
 from datasets import load_from_disk, load_dataset
@@ -8,7 +10,7 @@ from huggingface_hub import login
 from huggingface_hub import hf_hub_download
 
 from dotenv import load_dotenv
-import os
+
 
 # Load environment variables from the .env file
 load_dotenv()
