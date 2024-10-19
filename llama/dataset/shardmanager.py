@@ -10,6 +10,7 @@ def write_datafile(filename: str, tokens_np: np.ndarray) -> None:
     :param filename: The path to the file where the data will be saved.
     :param tokens_np: Numpy array of tokenized data to save.
     """
+    print(f"Writing {filename}")
     np.save(filename, tokens_np)
 
 
