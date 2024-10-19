@@ -35,15 +35,22 @@ def parse_args():
         default="data/edu_fineweb10B",
         help="Data root directory",
     )
-    parser.add_argument("--vocab_size", type=int, default=50304, help="Vocabulary size")
-    parser.add_argument("--emb_dim", type=int, default=768, help="Embedding dimension")
+    parser.add_argument(
+        "--vocab_size", type=int, default=128_256, help="Vocabulary size"
+    )
+    parser.add_argument("--emb_dim", type=int, default=2048, help="Embedding dimension")
     parser.add_argument(
         "--context_length", type=int, default=1024, help="Context length"
     )
-    parser.add_argument("--drop_rate", type=float, default=0.0, help="Dropout rate")
-    parser.add_argument("--n_layers", type=int, default=12, help="Number of layers")
     parser.add_argument(
-        "--n_heads", type=int, default=12, help="Number of attention heads"
+        "--n_kv_groups", type=int, default=8, help="Number of KV groups"
+    )
+    parser.add_argument("--rope_base", type=int, default=50_000, help="RoPE base")
+
+    parser.add_argument("--drop_rate", type=float, default=0.0, help="Dropout rate")
+    parser.add_argument("--n_layers", type=int, default=16, help="Number of layers")
+    parser.add_argument(
+        "--n_heads", type=int, default=32, help="Number of attention heads"
     )
     parser.add_argument(
         "--qkv_bias",
