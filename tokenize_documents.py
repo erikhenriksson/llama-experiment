@@ -8,9 +8,12 @@ from huggingface_hub import login
 from huggingface_hub import hf_hub_download
 import json
 
-with open("config.json", "r") as config_file:
-    config = json.load(config_file)
-    access_token = config["HF_ACCESS_TOKEN"]
+from dotenv import load_dotenv
+import os
+
+# Load environment variables from the .env file
+load_dotenv()
+access_token = os.getenv("HF_ACCESS_TOKEN")
 
 login(token=access_token)
 
@@ -29,7 +32,7 @@ def parse_args():
     parser.add_argument(
         "--local_dir",
         type=str,
-        default="exquisiteweb",
+        default="tokenized_data",
         help="Local directory to store data.",
     )
     parser.add_argument(
