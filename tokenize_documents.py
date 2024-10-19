@@ -102,10 +102,7 @@ def stream_from_shards(root_path, quality_threshold):
 def main():
     args = parse_args()
 
-    current_script_path = os.path.dirname(__file__)
-    project_root = os.path.dirname(current_script_path)
-    data_dir = os.path.join(project_root, "data")
-    DATA_CACHE_DIR = os.path.join(data_dir, args.local_dir)
+    DATA_CACHE_DIR = f"data/{args.local_dir}"
     os.makedirs(DATA_CACHE_DIR, exist_ok=True)
 
     if args.customize_data:
