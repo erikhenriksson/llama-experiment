@@ -1,7 +1,7 @@
 import os
 import argparse
 import multiprocessing as mp
-from datasets import load_from_disk
+from datasets import load_from_disk, load_dataset
 from llama.dataset import Tokenizer, ShardManager
 
 from huggingface_hub import login
