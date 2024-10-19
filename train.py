@@ -9,7 +9,6 @@ from torch.distributed import init_process_group
 from llama.dataset import Tokenizer
 from huggingface_hub import login
 from huggingface_hub import hf_hub_download
-import json
 
 from dotenv import load_dotenv
 import os
@@ -154,6 +153,8 @@ def main():
         n_layers=args.n_layers,
         n_heads=args.n_heads,
         qkv_bias=args.qkv_bias,
+        n_kv_groups=args.n_kv_groups,
+        rope_base=args.rope_base,
     )
     model = Llama3Model(model_cfg)
     model.to(device)

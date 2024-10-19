@@ -6,7 +6,6 @@ from llama.dataset import Tokenizer, ShardManager
 
 from huggingface_hub import login
 from huggingface_hub import hf_hub_download
-import json
 
 from dotenv import load_dotenv
 import os
