@@ -53,13 +53,13 @@ class Tokenizer:
     def decode(self, tokens):
         return self.model.decode(tokens)
 
-    def tokenize_doc(self, doc: dict, data_type: type = np.uint16) -> np.ndarray:
+    def tokenize_doc(self, doc: dict, data_type: type = np.uint32) -> np.ndarray:
         """
         Tokenizes a single document and returns a numpy array of tokens cast to the specified data type.
 
         :param doc: A document with a 'text' field to tokenize.
         :type doc: dict
-        :param data_type: The type to cast the numpy array to. Defaults to np.uint16.
+        :param data_type: The type to cast the numpy array to. Defaults to np.uint32.
         :type data_type: type
         :return: Tokenized document as a numpy array.
         :rtype: np.ndarray
