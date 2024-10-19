@@ -19,7 +19,7 @@ class ShardManager:
     def __init__(self, base_dir, shard_size):
         self.base_dir = base_dir
         self.shard_size = shard_size
-        self.current_shard = np.empty((shard_size,), dtype=np.uint16)
+        self.current_shard = np.empty((shard_size,), dtype=np.uint32)
         self.token_count = 0
         self.shard_index = 0
         self.progress_bar = None
