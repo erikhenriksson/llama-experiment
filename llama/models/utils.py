@@ -8,7 +8,7 @@ class RoPEConfig:
     factor: float = 32.0
     low_freq_factor: float = 1.0
     high_freq_factor: float = 4.0
-    original_context_length: int = 1024
+    original_context_length: int = 8192
 
 
 @dataclass
@@ -17,8 +17,8 @@ class LlamaConfig:
     emb_dim: int = 768
     hidden_dim: int = 8192
     context_length: int = 1024
-    n_layers: int = 32
-    n_heads: int = 16
+    n_layers: int = 12
+    n_heads: int = 12
     qkv_bias: bool = False
     n_kv_groups: int = 8
     rope_base: int = 50_000
