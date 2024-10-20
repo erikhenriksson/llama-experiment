@@ -15,7 +15,7 @@ class RoPEConfig:
 class LlamaConfig:
     vocab_size: int = 128_256
     emb_dim: int = 768
-    hidden_dim: int = 8192
+    hidden_dim: int = 2048
     context_length: int = 1024
     n_layers: int = 12
     n_heads: int = 12
