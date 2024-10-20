@@ -388,8 +388,6 @@ class TransformerBlock(nn.Module):
             context_length=cfg.context_length,
             num_heads=cfg.n_heads,
             dtype=cfg.dtype,  # NEW
-            # dropout=cfg["drop_rate"],
-            # qkv_bias=cfg["qkv_bias"]
         )
         self.ff = FeedForward(cfg)
 
@@ -404,7 +402,6 @@ class TransformerBlock(nn.Module):
         )
         ###########################################################################
 
-        # self.drop_shortcut = nn.Dropout(cfg["drop_rate"])
 
     def forward(self, x):
         # Shortcut connection for attention block

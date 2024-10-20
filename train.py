@@ -49,7 +49,7 @@ def parse_args():
     )
     parser.add_argument("--rope_base", type=int, default=50_000, help="RoPE base")
 
-    parser.add_argument("--drop_rate", type=float, default=0.0, help="Dropout rate")
+
     parser.add_argument("--n_layers", type=int, default=16, help="Number of layers")
     parser.add_argument(
         "--n_heads", type=int, default=32, help="Number of attention heads"
@@ -149,7 +149,6 @@ def main():
         vocab_size=args.vocab_size,
         emb_dim=args.emb_dim,
         context_length=args.context_length,
-        drop_rate=args.drop_rate,
         n_layers=args.n_layers,
         n_heads=args.n_heads,
         qkv_bias=args.qkv_bias,
