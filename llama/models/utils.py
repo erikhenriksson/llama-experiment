@@ -13,7 +13,7 @@ class RoPEConfig:
 
 @dataclass
 class LlamaConfig:
-    vocab_size: int = 128_256
+    vocab_size: int = 50257
     emb_dim: int = 768
     hidden_dim: int = 768
     context_length: int = 1024
