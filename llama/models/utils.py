@@ -15,10 +15,10 @@ class RoPEConfig:
 class LlamaConfig:
     vocab_size: int = 128_256
     emb_dim: int = 768
-    hidden_dim: int = 768
+    hidden_dim: int = 2048
     context_length: int = 1024
-    n_layers: int = 8
-    n_heads: int = 8
+    n_layers: int = 12
+    n_heads: int = 12
     qkv_bias: bool = False
     n_kv_groups: int = 8
     rope_base: int = 50_000

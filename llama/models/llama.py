@@ -11,6 +11,7 @@ class Llama3Model(nn.Module):
     def __init__(self, cfg: LlamaConfig) -> None:
         super().__init__()
         self.tok_emb = nn.Embedding(cfg.vocab_size, cfg.emb_dim, dtype=cfg.dtype)
+        self.cfg = cfg
 
         self.trf_blocks = nn.Sequential(
             *[TransformerBlock(cfg) for _ in range(cfg.n_layers)]
